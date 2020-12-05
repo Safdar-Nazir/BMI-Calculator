@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vs_code_app/calculator_brain.dart';
 import 'package:vs_code_app/screens/results_page.dart';
 import '../widgets/reusable_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -205,11 +206,18 @@ class _InputPageState extends State<InputPage> {
         BottomButton(
           buttonText: 'CALCULATE',
           onTap: () {
+            CalculatorBrain calculatorBrain =
+                CalculatorBrain(height: height, weight: weight);
+
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return ResultsPage();
+                  return ResultsPage(
+                    bmiValue: calculatorBrain.bmiValue(),
+                    resultText: calculatorBrain.resultText(),
+                    interpretation: calculatorBrain.interpretation(),
+                  );
                 },
               ),
             );

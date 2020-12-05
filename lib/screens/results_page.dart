@@ -4,6 +4,13 @@ import 'package:vs_code_app/widgets/bottom_button.dart';
 import '../widgets/reusable_card.dart';
 
 class ResultsPage extends StatelessWidget {
+
+  ResultsPage({@required this.resultText, @required this.bmiValue, @required this.interpretation});
+
+  final String resultText;
+  final String bmiValue;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,19 +42,22 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    'Normal',
+                    resultText.toUpperCase(),
                     style: kResultText,
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    '18.5',
+                    bmiValue,
                     style: kBMIValueText,
                     textAlign: TextAlign.center,
                   ),
-                  Text(
-                    'Great! You are doing great with your health!',
-                    style: kBMIBottomText,
-                    textAlign: TextAlign.center,
+                  Padding(
+                    padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                    child: Text(
+                      interpretation,
+                      style: kBMIBottomText,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),
