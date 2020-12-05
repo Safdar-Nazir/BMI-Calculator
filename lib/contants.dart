@@ -19,3 +19,26 @@ const kBottomButtonText = TextStyle(
   fontSize: 22,
   
 );
+
+const kResultTitleText = TextStyle(
+  color: Colors.white,
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
+);
+
+const kResultText = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 22.0,
+  color: Colors.green,
+);
+
+const kBMIValueText = TextStyle(
+  color: Colors.white,
+  fontSize: 100,
+  fontWeight: FontWeight.bold,
+);
+
+const kBMIBottomText = TextStyle(fontWeight:FontWeight.normal,
+fontSize: 18.0,
+color: Colors.white,
+);
