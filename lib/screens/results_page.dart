@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:vs_code_app/contants.dart';
+import 'package:vs_code_app/screens/input_page.dart';
 import 'package:vs_code_app/widgets/bottom_button.dart';
 import '../widgets/reusable_card.dart';
 
 class ResultsPage extends StatelessWidget {
-
-  ResultsPage({@required this.resultText, @required this.bmiValue, @required this.interpretation});
+  ResultsPage(
+      {@required this.resultText,
+      @required this.bmiValue,
+      @required this.interpretation});
 
   final String resultText;
   final String bmiValue;
@@ -29,7 +32,6 @@ class ResultsPage extends StatelessWidget {
               child: Text(
                 'Your Result',
                 style: kResultTitleText,
-                
               ),
             ),
           ),
@@ -52,7 +54,7 @@ class ResultsPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                     child: Text(
                       interpretation,
                       style: kBMIBottomText,
@@ -65,7 +67,10 @@ class ResultsPage extends StatelessWidget {
           ),
           BottomButton(
             buttonText: 'RE-CALCULATE',
-            onTap:(){
+            onTap: () {
+              height = 120;
+              weight = 60;
+              age = 20;
               Navigator.pop(context);
             },
           ),
